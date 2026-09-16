@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proj-frontend
+  namespace: proj
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: proj-frontend
+  template:
+    metadata:
+      labels:
+        app: proj-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: proj-frontend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80

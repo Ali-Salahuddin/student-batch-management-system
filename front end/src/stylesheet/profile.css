@@ -1,0 +1,70 @@
+/* Main profile page */
+.profile-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Page heading */
+.profile-page h1 {
+  text-align: center;
+  margin: 20px 0 30px;
+  font-size: 48px;
+  color: #2864e8;
+}
+
+/* Profile card */
+.profile-card {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  background: white;
+  border-radius: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+/* Profile image */
+.profile-image-container {
+  width: 220px;
+  height: 220px;
+  margin-bottom: 25px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #2864e8;
+  display: block;
+}
+
+/* Name */
+.profile-card h2 {
+  margin: 10px 0 20px;
+  font-size: 42px;
+   color: #1f2937;
+}
+
+/* Email and role */
+.profile-card p {
+  margin: 8px 0;
+  font-size: 25px;
+  color: #5b6472;
+}
+
+/* View Users button */
+.profile-page > button {
+  display: block;
+  margin: 25px auto 0;
+  padding: 10px 25px;
+  font-size: 18px;
+  cursor: pointer;
+}

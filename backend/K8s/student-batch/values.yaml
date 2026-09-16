@@ -1,0 +1,27 @@
+namespace: proj
+
+backend:
+  name: proj-backend
+  image:
+    repository: proj-backend
+    tag: latest
+    pullPolicy: Never
+  replicaCount: 1
+  containerPort: 4000
+  service:
+    port: 4000
+    targetPort: 4000
+    nodePort: 31156
+
+frontend:
+  name: proj-frontend
+  image:
+    repository: proj-frontend
+    tag: latest
+    pullPolicy: Never
+  replicaCount: 1
+  containerPort: 80
+  service:
+    port: 80
+    targetPort: 80
+    nodePort: 31157

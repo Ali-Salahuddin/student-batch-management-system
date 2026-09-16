@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proj-backend
+  namespace: proj
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: proj-backend
+  template:
+    metadata:
+      labels:
+        app: proj-backend
+    spec:
+      containers:
+        - name: backend
+          image: proj-backend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 4000
+          envFrom:
+            - secretRef:
+                name: backend-env

@@ -1,0 +1,56 @@
+/* ===========================
+   Students Table
+=========================== */
+
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.students-table th {
+    background: #2563eb;
+    color: white;
+    padding: 14px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.students-table td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #dcdcdc;
+    font-size: 16px;
+}
+
+.students-table tbody tr:nth-child(even) {
+    background: #f8f9ff;
+}
+
+.students-table tbody tr:hover {
+    background: #eef4ff;
+    transition: 0.2s;
+}
+
+.student-image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2563eb;
+}
+
+/* Modal scrolling */
+.modal {
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+/* Close button */
+.close-btn {
+    margin-top: 20px;
+}
