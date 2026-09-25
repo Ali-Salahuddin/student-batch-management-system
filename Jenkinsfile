@@ -44,6 +44,17 @@ pipeline {
                 }
             }
         }
+		stage('Docker Build Backend') {
+    steps {
+        sh 'docker build -t studentbatchacr.azurecr.io/proj-backend:v1 ./backend'
+    }
+}
+
+stage('Docker Build Frontend') {
+    steps {
+        sh 'docker build -t studentbatchacr.azurecr.io/proj-frontend:v1 "./front end"'
+    }
+}
     }
 
     post {
