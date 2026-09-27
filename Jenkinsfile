@@ -116,6 +116,47 @@ pipeline {
                 '''
             }
         }
+		stage('AKS Login') {
+    steps {
+        withCredentials([
+            usernamePassword(
+                credentialsId: 'azure-sp',
+                usernameVariable: 'AZURE_CLIENT_ID',
+                passwordVariable: 'AZURE_CLIENT_SECRET'
+            )
+        ]) {
+            sh '''
+                az login \
+                  --service-principal \
+                  --username "$AZURE_CLIENT_ID" \
+                  --password "$AZURE_CLIENT_SECRET" \
+                  --tenant 8334b546-4ada-47c2-ba82-bea55544f710
+
+                az account set \
+                  --subscription a135fe62-c442-48a2-a6fc-37b484589a4c
+
+                az aks get-credentials \
+                  --resource-group student-batch-rg \
+                  --name student-batch-aks \
+                  --overwrite-existing
+
+                kubectl get nodes
+            '''
+        }
+    }
+}
+stage('Deploy to AKS') {
+    steps {
+        sh '''
+            helm upgrade --install student-batch \
+              ./backend/K8s/student-batch \
+              --namespace proj \
+              --create-namespace \
+              --set backend.image.tag=${BUILD_NUMBER} \
+              --set frontend.image.tag=${BUILD_NUMBER}
+        '''
+    }
+}
     }
 
     post {
