@@ -152,8 +152,8 @@ stage('Deploy to AKS') {
               ./backend/K8s/student-batch \
               --namespace proj \
               --create-namespace \
-              --set backend.image.tag=${BUILD_NUMBER} \
-              --set frontend.image.tag=${BUILD_NUMBER}
+              --set backend.image.tag=${IMAGE_TAG} \
+              --set frontend.image.tag=${IMAGE_TAG}
         '''
     }
 }
