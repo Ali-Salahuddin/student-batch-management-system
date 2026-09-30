@@ -34,7 +34,7 @@ export default function EditUserModal({
   //const [preview, setPreview] = useState("");
   const [preview, setPreview] = useState(
   user.profileImage
-    ? `http://localhost:31156${user.profileImage}`
+    ? `/api${user.profileImage}`
     : "/default-avatar.png"
 );
   const [confirmPassword, setConfirmPassword] =useState("");
