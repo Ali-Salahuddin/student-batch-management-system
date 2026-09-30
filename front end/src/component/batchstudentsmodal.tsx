@@ -61,7 +61,7 @@ export default function BatchStudentsModal({
         <td>
           <img
             // src={`http://localhost:3000${student.profileImage}`}
-             src={`http://localhost:31156${student.profileImage}`}
+             src={`/api${student.profileImage}`}
             alt={student.name}
             className="student-image"
           />

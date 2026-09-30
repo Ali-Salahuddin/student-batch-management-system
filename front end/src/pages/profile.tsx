@@ -54,7 +54,7 @@ function Profile() {
           <div className="profile-card">
             <div className="profile-image-container">
               <img
-                src={`http://localhost:31156${user.profileImage}`}
+                src={`/api${user.profileImage}`}
                 alt={user.name}
                 className="profile-image"
               />

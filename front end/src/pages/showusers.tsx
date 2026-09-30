@@ -107,7 +107,7 @@ console.log("Search state:", search);
             <tr key={user._id}>
                  <td>   
                         <img
-                        src={`http://localhost:31156${user.profileImage}`}
+                        src={`/api${user.profileImage}`}
                         // src={`http://localhost:31156${user.profileImage}`}
                         alt={user.name}
                         className="user-image"
